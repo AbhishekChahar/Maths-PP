@@ -16,11 +16,18 @@ int gcd(int a, int b){
 }
 
 int main() {
-  int a=9;
-  int b=3;
-  int c =8;
-  cin>>a>>b;
-  cout<<gcd(a,b);
+
+  int n;
+  cin>>n;
+  int array[n] ;
+  for(int i=0; i<n; ++i){
+    cin>>array[i];
+  }
+  int res = gcd(array[0],array[1]);
+  for(int i=2; i<n;i++){
+    res = ( gcd(array[i],res));
+  }
+  cout<<res;
 
   return 0;
 }
