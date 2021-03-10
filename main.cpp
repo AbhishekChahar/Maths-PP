@@ -1,44 +1,45 @@
-//LCM of an array of elments
-// LCM of a number with 0 is undefined!
-#include <iostream>
-#include<algorithm>
+//Appy and chef
+//LCM and multiples
+
+#include<bits/stdc++.h>
 using  namespace std;
 
-int gcd(int a, int b){
+int lcm(int a ,int  b){
+  int maxm , minm;
+  maxm = max(a,b);
+  minm = min(a,b);
 
-  int maxm = max(a,b);
-  int minm = min(a,b);
-  if(minm ==0) return maxm;
-  while(maxm % minm !=0){
-    minm = maxm%minm;
+  if(minm ==1){return maxm;}
+  while(maxm%minm !=0){
+    int temp = maxm;
+    maxm = minm;
+    minm = temp % minm;
   }
-
-  return minm;
+  cout<<endl<<"LCM is: "<<(a*b)/minm;
+  return (a*b)/minm;
 }
+
+
 
 int main() {
 
-  int n;
-  cin>>n;
-  int array[n] ;
-  for(int i=0; i<n; ++i){
-    cin>>array[i];
+  int t;
+  cin>>t;
+  while(t--){
+    int n,a,b,k;
+    int solveA=0, solveB=0;
+    cin>>n>>a>>b>>k;
+    solveA = n/a;
+    solveB = n/b;
+    int common = n/lcm(a,b);
+    cout<<endl<<solveA<<" "<<solveB<<" "<<common<<endl;
+    if(solveA +solveB - 2*common >= k){
+      cout<<"Win"<<endl;
+    }
+    else{
+      cout<<"Lose"<<endl;
+    }
   }
-  if(n<1) return 0;
-  
-  int res = gcd(array[0],array[1]);
-  int lcm = (array[0]*array[1])/res;
-  if(n==2){ 
-    cout<< lcm;
-    return 0;
-  } 
-
-  for(int i=2; i<n;i++){
-    res = ( gcd(array[i],res));
-    lcm =( lcm * array[i] )/ res;
-  }
-
-  cout<<lcm;
 
   return 0;
 }

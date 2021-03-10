@@ -9,6 +9,8 @@
 //   int minm = min(a,b);
 //   if(minm ==0) return maxm;
 //   while(maxm % minm !=0){
+    // int temp=maxm;
+    // maxm = minm;
 //     minm = maxm%minm;
 //   }
 
