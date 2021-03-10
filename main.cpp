@@ -1,47 +1,63 @@
-//Appy and chef
-//LCM and multiples
-//Learn breaking the problems 
-// Think on a problem in an effictive way
-// Find the frequency 
-// find gcd of the frequency
-// check if it is greater than 1 or not.
-
+//Four Divisors Sum 
 #include<bits/stdc++.h>
 using  namespace std;
 
+class Solution {
+public:
+    int sumFourDivisors(vector<int>& nums) {
 
+        int n = nums.size();
+        for(int i=0;i<n;i++){
+          cout<<nums[i]<<" "<<i<<endl;
+        }
+        int count,sqt;
+        int sum_total=0 ;
+        int sum;
+        for(int i=0; i<n; i++){
+          count = 1;
+          sum = nums[i]+1;
+          sqt = sqrt(nums[i]);
+          if(sqt*sqt != nums[i]) sqt++;
+          cout<<sqt<<endl;
+          for(int j = 2; j<sqt;j++){
+            if( (nums[i] % j) == 0){
+              count++;
+              cout<<count<<" "<<nums[i]<<" "<<j<<endl;
+            }
+            if(count>2){
+              cout<<"count greater than 2 break"<<endl;
+              break;
+            }
+          }       
+          if(count==2){
+            cout<<"count 2 calc done"<<endl;
+            for(int j = 2; j<sqt;j++){
+              if( nums[i]%j == 0 ){
+                sum += j;
+                sum += nums[i]/j;
+                sum_total +=sum;
+              }
+            }    
+            cout<<nums[i]<<" "<<sum<<endl;
+          }
+
+        }
+        return sum_total;
+    }
+};
 int main() {
-
+  
   int n;
   cin>>n;
-  int arr[n];
-  for(int i =0; i<n; i++){
-    cin>>arr[i];
-  }
-  unordered_map<int , int> freq;
-  for(int i =0; i<n; i++){
-    freq[arr[i]]++;
-  }
-  for(auto x: freq){
-    cout<<endl<<x.first<<" "<<x.second;
-  }
 
-  int gcd = 0;  
-  for(auto it :freq){
-    int frequency = it.second;
-    if(gcd ==0) {
-      gcd = frequency;
-    }
-    else{
-      gcd = __gcd(gcd, frequency);
-    }
-  }
-  if(gcd == 1){
-    cout<<"no";
-  }
-  else{
-    cout<<"yes";
-  }
+  vector<int>nums;
+  int data;
+  for(int i=0 ; i < n ; i++){
+    cin>>data;
+    nums.push_back(data);
+  }  
+  Solution obj;
+  cout<<endl<<obj.sumFourDivisors(nums);
 
   return 0;
 }

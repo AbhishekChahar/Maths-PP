@@ -1,4 +1,5 @@
 // //GCD Euclid log2max(a,b)
+// //Inbuilt function lcm(a,b) and __gcd(a,b)
 // #include <iostream>
 // #include<algorithm>
 // using  namespace std;
