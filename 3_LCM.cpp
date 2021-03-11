@@ -1,5 +1,5 @@
-// //LCM of an array of elments
-// // LCM of a number with 0 is undefined!
+// // //LCM of an array of elments
+// // // LCM of a number with 0 is undefined!
 // #include <iostream>
 // #include<algorithm>
 // using  namespace std;
