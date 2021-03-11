@@ -1,4 +1,4 @@
-// //Four Divisors Sum 
+//Four Divisors Sum 
 // #include<bits/stdc++.h>
 // using  namespace std;
 
@@ -14,14 +14,21 @@
 //         int sum_total=0 ;
 //         int sum;
 //         for(int i=0; i<n; i++){
-//           count = 1;
-//           sum = nums[i]+1;
+//           count = 0;
+//           sum = 0;
 //           sqt = sqrt(nums[i]);
-//           if(sqt*sqt != nums[i]) sqt++;
+//           if(sqt*sqt != nums[i]){
+//             sqt++;
+//           } 
+//           else{
+//             continue;
+//           }
 //           cout<<sqt<<endl;
-//           for(int j = 2; j<sqt;j++){
+//           for(int j = 1; j<sqt;j++){
 //             if( (nums[i] % j) == 0){
 //               count++;
+//               sum += j;
+//               sum += nums[i]/j;
 //               cout<<count<<" "<<nums[i]<<" "<<j<<endl;
 //             }
 //             if(count>2){
@@ -31,16 +38,9 @@
 //           }       
 //           if(count==2){
 //             cout<<"count 2 calc done"<<endl;
-//             for(int j = 2; j<sqt;j++){
-//               if( nums[i]%j == 0 ){
-//                 sum += j;
-//                 sum += nums[i]/j;
-//                 sum_total +=sum;
-//               }
-//             }    
-//             cout<<nums[i]<<" "<<sum<<endl;
+//             sum_total +=sum;                
+//             cout<<sum<<endl;
 //           }
-
 //         }
 //         return sum_total;
 //     }
