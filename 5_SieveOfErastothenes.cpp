@@ -19,9 +19,6 @@
 //     }
 //   }
 //   cout<<endl;
-//   // for(auto x:arr){
-//   //   cout<<x;
-//   // }
 //   for(int  i=0; i<=n ; i++){
 //     if(arr[i]) cout<<i<<" ";
 //   }
