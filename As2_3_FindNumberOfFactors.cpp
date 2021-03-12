@@ -1,4 +1,4 @@
-// //Counting Primes and their powers in factorisation of a number.
+// //Number of Factorsof a number.
 // #include <bits/stdc++.h>
 // using namespace std;
 
